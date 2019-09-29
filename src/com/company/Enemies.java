@@ -1,8 +1,10 @@
 package com.company;
 
+import java.security.InvalidParameterException;
+
 public class Enemies
 {
-     private Character[] enemies = {
+     private static Character[] enemies = {
             new Character("Hedgehog", 1, 0),
             new Character("Small Rat", 6, 1),
             new Character("Big Rat", 7, 2),
@@ -15,7 +17,7 @@ public class Enemies
             new Character("UNSTOPPABLE EXODIA", 1000, 1000)
      };
 
-     public Character ChooseEnemy(int number)
+     public static Character ChooseEnemy(int number)
      {
          return enemies[number];
      }

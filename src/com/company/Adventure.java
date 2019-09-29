@@ -1,3 +1,4 @@
+
 package com.company;
 
 import java.util.Random;
@@ -11,11 +12,10 @@ public class Adventure
         var random = new Random();
         Character player = new Character(null, 0, 0);
         Classes classes = new Classes();
-        Enemies enemies = new Enemies();
         classes.ChooseClass(player);
         while(player.IsAlive())
         {
-            var enemy = enemies.ChooseEnemy(random.nextInt(10));
+            var enemy = Enemies.ChooseEnemy(random.nextInt(10));
             System.out.println("Your enemy is " +  enemy.name + "!");
             Thread.sleep(1000);
             player.Fight(enemy);
