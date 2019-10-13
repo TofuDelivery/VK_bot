@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class NewCharacter
 {
+    String name;
     int level;
     int maximumHealth;
     int currentHealth;
@@ -15,8 +16,9 @@ public class NewCharacter
     int experience;
     static int[] experienceForLevelUp = {1000, 2000, 3000, 5000};
 
-    public NewCharacter(int level, int health, int maximalDamage, int minimalDamage, int criticalChance, int damageReduction, int evasionChance, int experience)
+    public NewCharacter(String name, int level, int health, int maximalDamage, int minimalDamage, int criticalChance, int damageReduction, int evasionChance, int experience)
     {
+        this.name = name;
         this.level = level;
         this.maximumHealth = health;
         this.currentHealth = this.maximumHealth;
@@ -45,6 +47,7 @@ public class NewCharacter
         this.criticalChance += (int)(this.criticalChance / 10);
         this.damageReduction += (int)(this.damageReduction / 10);
         this.evasionChance += (int)(this.evasionChance / 10);
+        System.out.println(this.name + " достигает " + this.level + " уровня!");
     }
 
     private boolean IsAlive()
@@ -52,19 +55,61 @@ public class NewCharacter
         return this.currentHealth > 0;
     }
 
-    public void Attack(NewCharacter target)
+    private void RestoreHealth()
+    {
+        this.currentHealth = this.maximumHealth;
+    }
+
+    private void Attack(NewCharacter target)
     {
         var random = new Random();
         var currentDamage = random.nextInt(this.maximalDamage - this.minimalDamage) + minimalDamage;
         var currentCritChance = random.nextInt(100) + 1;
         if (currentCritChance <= this.criticalChance)
+        {
             currentDamage *= 2;
+            System.out.println("Критический удар!");
+
+        }
         var currentEvasionChance = random.nextInt(100) + 1;
-        if (currentEvasionChance <= this.evasionChance)
+        if (currentEvasionChance <= target.evasionChance)
+        {
+            System.out.println(target.name + " уклоняется!");
             return;
+        }
         else
+        {
+            currentDamage = currentDamage * (100 - target.damageReduction) / 100;
             target.currentHealth -= currentDamage;
+            System.out.println(target.name + " получает " + currentDamage + " урона!");
+        }
         if (!target.IsAlive())
+        {
             this.GetExperience(target);
+            System.out.println(target.name + " больше не двигается!");
+        }
+        else
+            {
+                System.out.println("У " + target.name + " осталось " + target.currentHealth + "очков здоровья!");
+            }
+    }
+
+    public void Fight(NewCharacter enemy) throws InterruptedException
+    {
+        while(this.IsAlive() && enemy.IsAlive())
+        {
+            this.Attack(enemy);
+            Thread.sleep(2000);
+            if (enemy.IsAlive())
+                enemy.Attack(this);
+            Thread.sleep(2000);
+        }
+        if (this.IsAlive())
+        {
+            System.out.println("You won! Your current health is " + this.currentHealth);
+            enemy.RestoreHealth();
+        }
+        else
+            System.out.println("You lose!");
     }
 }
