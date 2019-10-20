@@ -37,7 +37,7 @@ public class NewCharacter
             this.LevelUp();
     }
 
-    public void LevelUp()
+    private void LevelUp()
     {
         this.level++;
         this.maximumHealth += (int)(this.maximumHealth / 10);
@@ -50,7 +50,7 @@ public class NewCharacter
         System.out.println(this.name + " достигает " + this.level + " уровня!");
     }
 
-    private boolean IsAlive()
+    public boolean IsAlive()
     {
         return this.currentHealth > 0;
     }
