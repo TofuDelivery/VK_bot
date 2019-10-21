@@ -21,6 +21,7 @@ public class Bonus
     public void GiveBonuses(NewCharacter character)
     {
         character.maximumHealth += maximumHealthBonus;
+        character.currentHealth += maximumHealthBonus;
         character.maximalDamage += maximalDamageBonus;
         character.minimalDamage += minimalDamageBonus;
         character.criticalChance += criticalChanceBonus;

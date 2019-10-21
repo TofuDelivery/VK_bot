@@ -27,7 +27,7 @@ public class NewEnemies
             new NewCharacter("UNSTOPPABLE EXODIA", 1000, 1000, 2000, 1000, 100, 100, 0, 0)
     };
 
-    public static NewCharacter ChooseEnemy(int number)
+    public static NewCharacter chooseEnemy(int number)
     {
         return enemies[number];
     }

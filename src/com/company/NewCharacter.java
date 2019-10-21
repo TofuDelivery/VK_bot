@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class NewCharacter
@@ -14,7 +15,8 @@ public class NewCharacter
     int damageReduction;
     int evasionChance;
     int experience;
-    static int[] experienceForLevelUp = {1000, 2000, 3000, 5000};
+    Inventory inventory;
+    static int[] experienceForLevelUp = {1000, 2000, 3000, 5000, 8000, 12000, 18000, 25000, 35000};
 
     public NewCharacter(String name, int level, int health, int maximalDamage, int minimalDamage, int criticalChance, int damageReduction, int evasionChance, int experience)
     {
@@ -28,16 +30,17 @@ public class NewCharacter
         this.damageReduction = damageReduction;
         this.evasionChance = evasionChance;
         this.experience = experience;
+        inventory = new Inventory(new ArrayList<PassiveItem>(), new ArrayList<ActiveItem>(), this);
     }
 
-    private void GetExperience(NewCharacter target)
+    private void getExperience(NewCharacter target)
     {
         this.experience += target.experience;
         if (this.experience >= experienceForLevelUp[this.level - 1])
-            this.LevelUp();
+            this.levelUp();
     }
 
-    private void LevelUp()
+    private void levelUp()
     {
         this.level++;
         this.maximumHealth += (int)(this.maximumHealth / 10);
@@ -50,17 +53,19 @@ public class NewCharacter
         System.out.println(this.name + " достигает " + this.level + " уровня!");
     }
 
-    public boolean IsAlive()
+    public boolean isAlive()
     {
         return this.currentHealth > 0;
     }
 
-    private void RestoreHealth()
+    public boolean isDead() { return !this.isAlive(); }
+
+    public void restoreHealth(int health)
     {
-        this.currentHealth = this.maximumHealth;
+        this.currentHealth = Math.min(this.maximumHealth, this.currentHealth + health);
     }
 
-    private void Attack(NewCharacter target)
+    private void attack(NewCharacter target)
     {
         var random = new Random();
         var currentDamage = random.nextInt(this.maximalDamage - this.minimalDamage) + minimalDamage;
@@ -83,9 +88,9 @@ public class NewCharacter
             target.currentHealth -= currentDamage;
             System.out.println(target.name + " получает " + currentDamage + " урона!");
         }
-        if (!target.IsAlive())
+        if (target.isDead())
         {
-            this.GetExperience(target);
+            this.getExperience(target);
             System.out.println(target.name + " больше не двигается!");
         }
         else
@@ -94,20 +99,20 @@ public class NewCharacter
             }
     }
 
-    public void Fight(NewCharacter enemy) throws InterruptedException
+    public void fight(NewCharacter enemy) throws InterruptedException
     {
-        while(this.IsAlive() && enemy.IsAlive())
+        while(this.isAlive() && enemy.isAlive())
         {
-            this.Attack(enemy);
+            this.attack(enemy);
             Thread.sleep(2000);
-            if (enemy.IsAlive())
-                enemy.Attack(this);
+            if (enemy.isAlive())
+                enemy.attack(this);
             Thread.sleep(2000);
         }
-        if (this.IsAlive())
+        if (this.isAlive())
         {
             System.out.println("You won! Your current health is " + this.currentHealth);
-            enemy.RestoreHealth();
+            enemy.restoreHealth(enemy.maximumHealth);
         }
         else
             System.out.println("You lose!");
