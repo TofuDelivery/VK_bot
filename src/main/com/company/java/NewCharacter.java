@@ -146,13 +146,14 @@ public class NewCharacter
         this.attack(target, msg);
     }
 
-    private NewCharacter chooseTarget(NewCharacter[] targets, Message msg) //throws NullPointerException, ApiException, ClientException
+    private NewCharacter chooseTarget(NewCharacter[] targets, Message msg) throws NullPointerException //ApiException, ClientException
     {
+        new VKManager().sendMessage("                       ", msg.getUserId());
         new VKManager().sendMessage("Выберите цель для атаки", msg.getUserId());
-        Integer i = 1;
+        Integer i = 0;
         for(NewCharacter target : targets)
         {
-            System.out.println(i.toString() + target.name);
+            new VKManager().sendMessage(i.toString() + ")  " + target.name, msg.getUserId());
             i++;
         }
         while(true)
@@ -161,8 +162,7 @@ public class NewCharacter
 
                 Integer choice = Integer.parseInt(String.valueOf(new VKCore().getMessage().getBody()));
 
-                if(choice < 0 || choice >= targets.length)
-                {
+                if(choice < 0 || choice >= targets.length) {
                     new VKManager().sendMessage("Некорректный ввод. Попробуйте снова", msg.getUserId());
                 }
                 else

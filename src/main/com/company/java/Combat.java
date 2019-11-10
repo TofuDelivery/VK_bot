@@ -37,6 +37,6 @@ public class Combat
             enemy.restoreHealth();
         }
         else
-        new VKManager().sendMessage("You lose!", msg.getUserId());
+        new VKManager().sendMessage("Game over", msg.getUserId());
     }
 }
