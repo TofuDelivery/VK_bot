@@ -14,7 +14,7 @@ public class Messenger  implements Runnable {
     }
 
     @Override
-    public void run() throws NullPointerException, ApiException, ClientException, InterruptedException
+    public void run() throws NullPointerException
     {
       Commander.execute(message);
     }

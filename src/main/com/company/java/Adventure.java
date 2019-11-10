@@ -16,7 +16,7 @@ public class Adventure
         Adventure.player = player;
     }
 
-    public static void Run(Message msg) throws NullPointerException, ApiException, ClientException, InterruptedException
+    public static void Run(Message msg) throws NullPointerException, InterruptedException
     {
         var random = new Random();
         while(player.isAlive())

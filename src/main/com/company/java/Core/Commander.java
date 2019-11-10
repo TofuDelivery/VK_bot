@@ -6,7 +6,7 @@ import com.vk.api.sdk.objects.messages.Message;
 
 public class Commander {
     private static int state = 0;
-    public static void execute(Message message) throws NullPointerException, ApiException, ClientException, InterruptedException
+    public static void execute(Message message) throws NullPointerException
     {
 
         var command = CommandDeterminant.getCommand(CommandManager.getCommands(), message, state);

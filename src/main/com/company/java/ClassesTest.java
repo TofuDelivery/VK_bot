@@ -1,4 +1,4 @@
-package main.com.company.java;
+/*package main.com.company.java;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,4 +9,4 @@ class ClassesTest {
     @Test
     void chooseClass() {
     }
-}
+}*/

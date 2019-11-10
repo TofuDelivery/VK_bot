@@ -25,7 +25,7 @@ public class Choice extends Command {
     }
 
     @Override
-    public void exec(Message message) throws NullPointerException, ApiException, ClientException, InterruptedException
+    public void exec(Message message) //throws NullPointerException, ApiException, ClientException, InterruptedException
     {
         getChoice(message);
         startAdventure(message);
@@ -41,7 +41,7 @@ public class Choice extends Command {
         }
     }
 
-    private void startAdventure(Message message) throws NullPointerException, ApiException, ClientException, InterruptedException
+    private void startAdventure(Message message) //throws NullPointerException, ApiException, ClientException, InterruptedException
     {
         var adventure = new Adventure(player);
         try {

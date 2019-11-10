@@ -14,6 +14,6 @@ public  abstract class Command {
         this.name = name;
     }
 
-    public abstract void exec(Message message) throws NullPointerException, ApiException, ClientException, InterruptedException;
+    public abstract void exec(Message message) throws NullPointerException;
 
 }

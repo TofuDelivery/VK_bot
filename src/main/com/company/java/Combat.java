@@ -19,7 +19,7 @@ public class Combat
 
 
     //public void
-    public static void fight(NewCharacter player, NewCharacter enemy, Message msg) throws NullPointerException, ApiException, ClientException, InterruptedException
+    public static void fight(NewCharacter player, NewCharacter enemy, Message msg) throws NullPointerException, InterruptedException
     {
         NewCharacter[] enemies = new NewCharacter[]{enemy};
         NewCharacter[] players = new NewCharacter[]{player};

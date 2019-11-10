@@ -140,13 +140,13 @@ public class NewCharacter
         this.experience = anotherCharacter.experience;
     }
 
-    public void makeTurn(NewCharacter[] enemies, Message msg) throws NullPointerException, ApiException, ClientException
+    public void makeTurn(NewCharacter[] enemies, Message msg) //throws NullPointerException, ApiException, ClientException
     {
         NewCharacter target = chooseTarget(enemies, msg);
         this.attack(target, msg);
     }
 
-    private NewCharacter chooseTarget(NewCharacter[] targets, Message msg) throws NullPointerException, ApiException, ClientException
+    private NewCharacter chooseTarget(NewCharacter[] targets, Message msg) //throws NullPointerException, ApiException, ClientException
     {
         new VKManager().sendMessage("Выберите цель для атаки", msg.getUserId());
         Integer i = 1;
@@ -157,15 +157,22 @@ public class NewCharacter
         }
         while(true)
         {
-            Integer choice = Integer.parseInt(String.valueOf(new VKCore().getMessage().getBody()));
-            if(choice < 0 || choice >= targets.length)
-            {
-                new VKManager().sendMessage("Некорректный ввод. Попробуйте снова", msg.getUserId());
-            }
-            else
+            try {
+
+                Integer choice = Integer.parseInt(String.valueOf(new VKCore().getMessage().getBody()));
+
+                if(choice < 0 || choice >= targets.length)
                 {
-                    return targets[choice];
+                    new VKManager().sendMessage("Некорректный ввод. Попробуйте снова", msg.getUserId());
                 }
+                else
+                    {
+                        return targets[choice];
+                    }
+            }catch (ApiException | ClientException  e){
+                System.out.println("Возникли проблемы");
+                e.printStackTrace();
+            }
         }
 
     }
