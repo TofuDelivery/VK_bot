@@ -148,27 +148,29 @@ public class NewCharacter
 
     private NewCharacter chooseTarget(NewCharacter[] targets, Message msg) throws NullPointerException //ApiException, ClientException
     {
-        new VKManager().sendMessage("                       ", msg.getUserId());
+        new VKManager().sendMessage("______________", msg.getUserId());
         new VKManager().sendMessage("Выберите цель для атаки", msg.getUserId());
-        Integer i = 0;
+        int i = 0;
         for(NewCharacter target : targets)
         {
-            new VKManager().sendMessage(i.toString() + ")  " + target.name, msg.getUserId());
+            new VKManager().sendMessage(i + ")  " + target.name, msg.getUserId());
             i++;
         }
         while(true)
         {
             try {
+                var message = new VKCore().getMessage();
+                if (message != null){
+                    int choice = Integer.parseInt(String.valueOf(message.getBody()));
 
-                Integer choice = Integer.parseInt(String.valueOf(new VKCore().getMessage().getBody()));
-
-                if(choice < 0 || choice >= targets.length) {
-                    new VKManager().sendMessage("Некорректный ввод. Попробуйте снова", msg.getUserId());
-                }
-                else
-                    {
-                        return targets[choice];
+                    if(choice < 0 || choice >= targets.length) {
+                        new VKManager().sendMessage("Некорректный ввод. Попробуйте снова", msg.getUserId());
                     }
+                    else
+                        {
+                            return targets[choice];
+                        }
+                }
             }catch (ApiException | ClientException  e){
                 System.out.println("Возникли проблемы");
                 e.printStackTrace();

@@ -13,6 +13,9 @@ public class Commander {
         if (command.name.equals("start")){
             state = 1;
         }
+        if (command.name.equals("choice")){
+            state = 2;
+        }
         command.exec(message);
     }
 }
