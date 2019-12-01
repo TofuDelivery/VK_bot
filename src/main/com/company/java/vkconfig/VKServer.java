@@ -3,12 +3,13 @@ package main.com.company.java.vkconfig;
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.messages.Message;
+import main.com.company.java.Core.Commands;
+import main.com.company.java.Core.Game;
+import main.com.company.java.Character;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.HashMap;
 
 public class VKServer {
-
     public  static VKCore vkCore;
     static {
         try{
@@ -18,17 +19,19 @@ public class VKServer {
         }
     }
 
-    public static void main(String[] args) throws NullPointerException, ApiException, InterruptedException{
+    public static void main(String[] args) throws NullPointerException, ApiException, InterruptedException, ClientException {
         System.out.println(("Running server..."));
-        int state = 0;
-
+        var defaultChar = new Character("default", 0, 0, 0, 0, 0, 0, 0, 0);
+        var games = new HashMap<Integer, Game>();
         while (true){
-            Thread.sleep(300);
+            //Thread.sleep(100);
             try{
                 Message message = vkCore.getMessage();
-                if(message != null){
-                    ExecutorService exec = Executors.newCachedThreadPool();
-                    exec.execute(new Messenger(message, state));
+                if(message != null)
+                {
+                    if(!games.containsKey(message.getUserId()))
+                        games.put(message.getUserId(), new Game(defaultChar, null));
+                    Commands.pool.get(games.get(message.getUserId()).state).exec(games.get(message.getUserId()), message);
                 }
             }catch(ClientException e){
                 System.out.println("Возникли проблемы");

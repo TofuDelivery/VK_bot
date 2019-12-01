@@ -2,17 +2,23 @@ package main.com.company.java.Core;
 
 import com.vk.api.sdk.objects.messages.Message;
 import main.com.company.java.vkconfig.VKManager;
+import main.com.company.java.vkconfig.VKServer;
 
 public class Start extends Command {
 
-    public Start(int state, String name) {
-        super(state, name);
-
-    }
-
     @Override
-    public void exec(Message message) {
-        new VKManager().sendMessage("Игра началась", message.getUserId());
-        new VKManager().sendMessage("Choose your class - 1)Saber  2)Assassin 3)Caster", message.getUserId());
+    public void exec(Game game, Message message)
+    {
+        if(message.getBody().equals("start"))
+        {
+            new VKManager().sendMessage("Игра началась!", message.getUserId());
+            new VKManager().sendSticker(message.getUserId());
+            new VKManager().sendKeyBoardWithThreeButtons("Выберите класс","Мечник", "Ассассин", "Заклинатель", message.getUserId());
+            game.setState(1);
+        }
+        else
+        {
+            new VKManager().sendMessage("Привет-привет. Чтобы начать игру, введите start", message.getUserId());
+        }
     }
 }

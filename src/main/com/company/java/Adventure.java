@@ -4,27 +4,14 @@ package main.com.company.java;
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.messages.Message;
-import main.com.company.java.vkconfig.VKManager;
-
-import java.util.Random;
+import main.com.company.java.Core.Commands;
+import main.com.company.java.vkconfig.VKCore;
 
 public class Adventure
 {
-    private static NewCharacter player;
-
-    public Adventure(NewCharacter player){
-        Adventure.player = player;
-    }
-
-    public static void Run(Message msg) throws NullPointerException, InterruptedException
+    public static void Run(Message msg) throws NullPointerException, InterruptedException, ClientException, ApiException
     {
-        var random = new Random();
-        while(player.isAlive())
-        {
-            var enemy = Enemies.ChooseEnemy(random.nextInt(22));
-            new VKManager().sendMessage("Your enemy is " +  enemy.name + "!" , msg.getUserId());
-            Thread.sleep(1000);
-            Combat.fight(player, enemy, msg);
-        }
+        //var player = Commands.chooseClass(msg);
+        //Commands.startAdventure(player, msg);
     }
 }

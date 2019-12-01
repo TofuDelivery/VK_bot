@@ -1,36 +1,30 @@
 package main.com.company.java;
 
-import java.security.InvalidParameterException;
-
 public class Enemies
 {
-     private static NewCharacter[] enemies = {
-             new NewCharacter("Hedgehog", 1, 10, 0, 0, 0, 0, 0, 10),
-             new NewCharacter("Rat", 1, 6, 4, 1, 10, 0, 10, 40),
-             new NewCharacter("Wolf", 1, 20, 6, 4, 5, 0, 0, 100),
-             new NewCharacter("Boar", 1, 30, 6, 1, 0, 10, 0, 150),
-             new NewCharacter("Goblin", 1, 15, 8, 3, 10, 0, 0, 150),
-             new NewCharacter("Cobold", 1, 25, 8, 5, 5, 0, 5, 200),
-             new NewCharacter("Gnoll", 1, 30, 6, 4, 5, 5, 0, 200),
-             new NewCharacter("Little Ooze", 1, 20, 3, 1, 0, 0, 0, 200),
-             new NewCharacter("Sсelet", 1, 35, 8, 7, 0, 10, 0, 300),
-             new NewCharacter("Rogue", 1, 40, 10, 2, 10, 0, 10, 300),
-             new NewCharacter("Zombie", 1, 40, 10, 6, 5, 0, 0, 350),
-             new NewCharacter("Orc", 1, 60, 8, 4, 5, 5, 0, 400),
-             new NewCharacter("Ooze", 1, 60, 5, 1, 0, 0, 0, 400),
-             new NewCharacter("GIANT ENEMY CRAB", 1, 70, 4, 1, 0, 10, 0, 500),
-             new NewCharacter("Giant Poisonous Snake", 1, 40, 10, 4, 10, 0, 20, 500),
-             new NewCharacter("Ghost", 1, 10, 10, 5, 0, 0, 90, 600),
-             new NewCharacter("Hobgoblin", 1, 50, 12, 4, 5, 0, 5, 600),
-             new NewCharacter("Giant Spider", 1, 70, 12, 2, 0, 15, 0, 800),
-             new NewCharacter("Centaur", 1, 50, 15, 5, 10, 5, 5, 800),
-             new NewCharacter("Giant Scorpion", 1, 70, 20, 10, 0, 5, 0, 1000),
-             new NewCharacter("Giant Ooze", 1, 100, 10, 1, 0, 10, 0, 1000),
-             new NewCharacter("UNSTOPPABLE EXODIA", 1, 1000, 2000, 1000, 100, 100, 0, 0)
+     private static EnemiesParty[] enemies = {
+             new EnemiesParty("Ёжик", new Character("Ёжик", 1, 10, 1, 0, 0, 0, 0, 10)),
+             new EnemiesParty("Крыса", new Character("Крыса", 1, 6, 4, 1, 10, 0, 10, 40)),
+             new EnemiesParty("Волк", new Character("Волк", 1, 20, 6, 4, 5, 0, 0, 100)),
+             new EnemiesParty("Кабан", new Character("Кабан", 1, 30, 6, 1, 0, 10, 0, 150)),
+             new EnemiesParty("Гоблин", new Character("Гоблин", 1, 15, 8, 3, 10, 0, 0, 150)),
+             new EnemiesParty("Кобольд", new Character("Кобольд", 1, 25, 8, 5, 5, 0, 5, 200)),
+             new EnemiesParty("Отряд Ёжиков", new Character("Ёжик", 1, 10, 1, 0, 0, 0, 0, 10), new Character("Ёжик", 1, 10, 1, 0, 0, 0, 0, 10), new Character("Ёжик", 1, 10, 1, 0, 0, 0, 0, 10), new Character("Ёжик", 1, 10, 1, 0, 0, 0, 0, 10), new Character("Ёжик", 1, 10, 1, 0, 0, 0, 0, 10)),
+             new EnemiesParty("Два Кобольда", new Character("Кобольд", 1, 25, 8, 5, 5, 0, 5, 200), new Character("Кобольд", 1, 25, 8, 5, 5, 0, 5, 200)),
+             new EnemiesParty("Крысиная свора", new Character("Крыса", 1, 6, 4, 1, 10, 0, 10, 40), new Character("Крыса", 1, 6, 4, 1, 10, 0, 10, 40), new Character("Крыса", 1, 6, 4, 1, 10, 0, 10, 40), new Character("Крыса", 1, 6, 4, 1, 10, 0, 10, 40)),
+             new EnemiesParty("Стая волков", new Character("Волк", 1, 20, 6, 4, 5, 0, 0, 100), new Character("Волк", 1, 20, 6, 4, 5, 0, 0, 100), new Character("Волк", 1, 20, 6, 4, 5, 0, 0, 100)),
+             new EnemiesParty("Хобгоблин", new Character("Хобгоблин", 1, 30, 16, 4, 15, 0, 0, 300)),
+             new EnemiesParty("Орк", new Character("Орк", 1, 50, 20, 10, 10, 5, 5, 500)),
+             new EnemiesParty("Отряд зеленокожих", new Character("Гоблин", 1, 15, 8, 3, 10, 0, 0, 150), new Character("Гоблин", 1, 15, 8, 3, 10, 0, 0, 150), new Character("Орк", 1, 50, 20, 10, 10, 5, 5, 500))
      };
 
-     public static NewCharacter ChooseEnemy(int number)
+     public static EnemiesParty ChooseEnemy(int number)
      {
           return enemies[number];
+     }
+
+     public static int getCount()
+     {
+          return enemies.length;
      }
 }

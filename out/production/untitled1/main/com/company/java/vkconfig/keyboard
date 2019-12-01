@@ -1,0 +1,52 @@
+keyboard = "{
+    "one_time": false,
+    "buttons": [
+        [{
+            "action": {
+                "type": "text",
+                "payload": "{\"button\": \"1\"}",
+                "label": "1"
+            },
+
+        }],
+        [{
+            "action": {
+                "type": "vkpay",
+                "hash": "action=transfer-to-group&group_id=181108510&aid=10"
+            }
+        }],
+        [{
+                "action": {
+                    "type": "text",
+                    "payload": "{\"button\": \"1\"}",
+                    "label": "Negative"
+                },
+                "color": "negative"
+            },
+            {
+                "action": {
+                    "type": "text",
+                    "payload": "{\"button\": \"2\"}",
+                    "label": "Positive"
+                },
+                "color": "positive"
+            },
+            {
+                "action": {
+                    "type": "text",
+                    "payload": "{\"button\": \"2\"}",
+                    "label": "Primary"
+                },
+                "color": "primary"
+            },
+            {
+                "action": {
+                    "type": "text",
+                    "payload": "{\"button\": \"2\"}",
+                    "label": "Secondary"
+                },
+                "color": "secondary"
+            }
+        ]
+    ]
+}"

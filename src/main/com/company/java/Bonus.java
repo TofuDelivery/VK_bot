@@ -18,7 +18,7 @@ public class Bonus
         this.evasionChanceBonus = evasionChanceBonus;
     }
 
-    public void GiveBonuses(NewCharacter character)
+    public void GiveBonuses(Character character)
     {
         character.maximumHealth += maximumHealthBonus;
         character.maximalDamage += maximalDamageBonus;

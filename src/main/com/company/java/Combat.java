@@ -1,42 +1,41 @@
 package main.com.company.java;
 
-import com.vk.api.sdk.exceptions.ApiException;
-import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.messages.Message;
+import main.com.company.java.Core.Game;
 import main.com.company.java.vkconfig.VKManager;
+
+import java.util.Random;
 
 public class Combat
 {
-    private static boolean isPartyAlive(NewCharacter[] characters)
+    public static boolean isPartyAlive(Character[] characters)
     {
-        for(NewCharacter character : characters)
-        {
-            if(character.isAlive())
-                return true;
-        }
+        for(Character character : characters)
+    {
+        if(character.isAlive())
+            return true;
+    }
         return false;
     }
 
-
-    //public void
-    public static void fight(NewCharacter player, NewCharacter enemy, Message msg) throws NullPointerException, InterruptedException
+    public static void restoreParty(Character[] characters)
     {
-        NewCharacter[] enemies = new NewCharacter[]{enemy};
-        NewCharacter[] players = new NewCharacter[]{player};
-        while(player.isAlive() && enemy.isAlive())
+        for(var deadEnemy : characters)
         {
-            player.makeTurn(enemies, msg);
-            Thread.sleep(2000);
-            if(enemy.isAlive())
-                enemy.makeAITurn(players, msg);
-            Thread.sleep(2000);
+            deadEnemy.restoreHealth();
         }
-        if (player.isAlive() && player.level != 5)
-        {
-            new VKManager().sendMessage("You won! Your current health is " + player.currentHealth, msg.getUserId());
-            enemy.restoreHealth();
-        }
-        else
-        new VKManager().sendMessage("Game over", msg.getUserId());
+    }
+
+    public static boolean isPartyDead(Character[] characters)
+    {
+        return !isPartyAlive(characters);
+    }
+
+    public static void chooseCurrentEnemy(Game game, Message msg) throws InterruptedException {
+        var random = new Random();
+        game.enemies = Enemies.ChooseEnemy(random.nextInt(Enemies.getCount()));
+        new VKManager().sendMessage("На вашем пути появляется " +  game.enemies.name + "!" , msg.getUserId());
+        new VKManager().sendKeyboardWithTwoButtons("Что будете делать?","Атаковать", "Убегать", msg.getUserId());
+        Thread.sleep(1000);
     }
 }
