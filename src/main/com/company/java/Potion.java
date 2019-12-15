@@ -2,8 +2,12 @@ package main.com.company.java;
 
 public abstract class Potion
 {
-    public String name = "Potion";
-    int value = 0;
+    private String name;
+    int value;
+
+    public String getName(){
+        return this.name;
+    }
 
     public abstract void consume(Character target);
 }

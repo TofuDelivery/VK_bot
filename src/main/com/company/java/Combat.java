@@ -4,6 +4,7 @@ import com.vk.api.sdk.objects.messages.Message;
 import main.com.company.java.Core.Game;
 import main.com.company.java.vkconfig.VKManager;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Combat
@@ -35,7 +36,12 @@ public class Combat
         var random = new Random();
         game.enemies = Enemies.ChooseEnemy(random.nextInt(Enemies.getCount()));
         new VKManager().sendMessage("На вашем пути появляется " +  game.enemies.name + "!" , msg.getUserId());
-        new VKManager().sendKeyboardWithTwoButtons("Что будете делать?","Атаковать", "Убегать", msg.getUserId());
+        var buttonTexts = new ArrayList<String>();
+        buttonTexts.add("Атаковать");
+        buttonTexts.add("Убегать");
+        buttonTexts.add("Выпить зелье");
+        new VKManager().sendKeyBoard("Что будете делать?", msg.getUserId(), buttonTexts);
+
         Thread.sleep(1000);
     }
 }

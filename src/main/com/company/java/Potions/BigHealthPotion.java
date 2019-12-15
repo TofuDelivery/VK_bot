@@ -5,8 +5,13 @@ import main.com.company.java.Potion;
 
 public class BigHealthPotion extends Potion
 {
-    String name = "Большое зелье здоровья";
+    private String name = "Большое зелье здоровья";
     int value = 400;
+
+    public String getName(){
+        return this.name;
+    }
+
     @Override
     public void consume(Character target)
     {

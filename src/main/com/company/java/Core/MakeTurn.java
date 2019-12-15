@@ -10,6 +10,7 @@ import main.com.company.java.vkconfig.VKServer;
 import org.apache.tools.ant.types.resources.selectors.None;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MakeTurn extends Command {
@@ -40,7 +41,11 @@ public class MakeTurn extends Command {
                 new Exit().exec(game, message);
                 Combat.restoreParty(enemies);
             } else {
-                new VKManager().sendKeyboardWithTwoButtons("Что будете делать?", "Атаковать", "Убегать", message.getUserId());
+                var buttonTexts = new ArrayList<String>();
+                buttonTexts.add("Атаковать");
+                buttonTexts.add("Убегать");
+                buttonTexts.add("Выпить зелье");
+                new VKManager().sendKeyBoard("Что будете делать?", message.getUserId(), buttonTexts);
                 game.setState(3);
             }
         }
