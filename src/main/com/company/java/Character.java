@@ -22,6 +22,7 @@ public class Character
     int evasionChance;
     int experience;
     int id;
+    public PotionInventory potions;
     public Character currentTarget;
     static int[] experienceForLevelUp = {1000, 2000, 3000, 5000};
 
@@ -38,6 +39,7 @@ public class Character
         this.evasionChance = evasionChance;
         this.experience = experience;
         this.id = id;
+        this.potions = new PotionInventory(this);
     }
 
     public boolean isDead()

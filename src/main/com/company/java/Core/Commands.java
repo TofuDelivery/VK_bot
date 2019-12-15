@@ -11,5 +11,6 @@ public class Commands
         {put(3, new ChooseTarget());}
         {put(4, new MakeTurn());}
         {put(5, new ContinueAdventure());}
+        {put(9, new DrinkPotion());}
     };
 }

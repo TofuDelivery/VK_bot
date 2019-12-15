@@ -18,6 +18,8 @@ public class ChooseTarget extends Command
             new VKManager().sendMessage("Вы успешно спаслись!", message.getUserId());
             new VKManager().sendKeyboardWithTwoButtons("Хотите продолжать приключение?", "Да", "Нет", message.getUserId());
             game.setState(5);
+        }else if (message.getBody().equals("Выпить зелье")){
+            new SelectPotion().exec(game, message);
         }else{
             var currentEnemies = new ArrayList<String>();
             for (var enemy : game.enemies.enemies) {
