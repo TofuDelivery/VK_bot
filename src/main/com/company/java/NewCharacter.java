@@ -7,25 +7,25 @@ import com.vk.api.sdk.objects.messages.Message;
 import main.com.company.java.vkconfig.VKCore;
 import main.com.company.java.vkconfig.VKManager;
 
+import java.util.ArrayList;
 import java.util.Random;
 
-public class Character
+public class NewCharacter
 {
-    public String name;
-    public int level;
-    public int maximumHealth;
+    String name;
+    int level;
+    int maximumHealth;
     public int currentHealth;
     int maximalDamage;
     int minimalDamage;
     int criticalChance;
     int damageReduction;
     int evasionChance;
-    int experience;
-    int id;
-    public Character currentTarget;
-    static int[] experienceForLevelUp = {1000, 2000, 3000, 5000};
+    private int experience;
+    ArrayList items;
+    private static int[] experienceForLevelUp = {1000, 2000, 3000, 5000};
 
-    public Character(String name, int id, int level, int health, int maximalDamage, int minimalDamage, int criticalChance, int damageReduction, int evasionChance, int experience)
+    public NewCharacter(String name, int level, int health, int maximalDamage, int minimalDamage, int criticalChance, int damageReduction, int evasionChance, int experience)
     {
         this.name = name;
         this.level = level;
@@ -37,7 +37,7 @@ public class Character
         this.damageReduction = damageReduction;
         this.evasionChance = evasionChance;
         this.experience = experience;
-        this.id = id;
+        this.items = new ArrayList();
     }
 
     public boolean isDead()
@@ -45,7 +45,11 @@ public class Character
         return !isAlive();
     }
 
-    private void getExperience(Character target, Message msg)
+    public void addItem(Item item){
+        this.items.add(item);
+    }
+
+    private void getExperience(NewCharacter target, Message msg)
     {
         this.experience += target.experience;
         if (this.experience >= experienceForLevelUp[this.level - 1])
@@ -75,15 +79,16 @@ public class Character
         this.currentHealth = this.maximumHealth;
     }
 
-    public void attack(Character target, Message msg) throws InterruptedException {
-        new VKManager().sendMessage(this.name + " атакует!", msg.getUserId());
+    public void attack(NewCharacter target, Message msg)
+    {
         var random = new Random();
-        var currentDamage = random.nextInt(this.maximalDamage - this.minimalDamage + 1) + minimalDamage;
+        var currentDamage = random.nextInt(this.maximalDamage - this.minimalDamage) + minimalDamage;
         var currentCritChance = random.nextInt(100) + 1;
         if (currentCritChance <= this.criticalChance)
         {
             currentDamage *= 2;
             new VKManager().sendMessage("Критический удар!", msg.getUserId());
+
         }
         var currentEvasionChance = random.nextInt(100) + 1;
         if (currentEvasionChance <= target.evasionChance)
@@ -108,7 +113,7 @@ public class Character
         }
     }
 
-    public void changeCharacter(Character anotherCharacter)
+    public void changeCharacter(NewCharacter anotherCharacter)
     {
         this.name = anotherCharacter.name;
         this.level = anotherCharacter.level;
@@ -122,14 +127,54 @@ public class Character
         this.experience = anotherCharacter.experience;
     }
 
-    private Character chooseRandomTarget(Character[] targets)
+   // public void makeTurn(NewCharacter[] enemies, Message msg) //throws NullPointerException, ApiException, ClientException
+    //{
+    //    NewCharacter target = chooseTarget(enemies, msg);
+     //   this.attack(target, msg);
+   // }
+
+    private NewCharacter chooseTarget(NewCharacter[] targets, Message msg) throws NullPointerException //ApiException, ClientException
+    {
+        new VKManager().sendMessage("______________", msg.getUserId());
+        new VKManager().sendMessage("Выберите цель для атаки", msg.getUserId());
+        int i = 0;
+        for(NewCharacter target : targets)
+        {
+            new VKManager().sendMessage(i + ")  " + target.name, msg.getUserId());
+            i++;
+        }
+        while(true)
+        {
+            try {
+                var message = new VKCore().getMessage();
+                if (message != null){
+                    int choice = Integer.parseInt(String.valueOf(message.getBody()));
+
+                    if(choice < 0 || choice >= targets.length) {
+                        new VKManager().sendMessage("Некорректный ввод. Попробуйте снова", msg.getUserId());
+                    }
+                    else
+                        {
+                            return targets[choice];
+                        }
+                }
+            }catch (ApiException | ClientException  e){
+                System.out.println("Возникли проблемы");
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    private NewCharacter chooseRandomTarget(NewCharacter[] targets)
     {
         Random random = new Random();
         return targets[random.nextInt(targets.length)];
     }
 
-    public void makeAITurn(Character[] targets, Message msg) throws InterruptedException {
-        Character target = chooseRandomTarget(targets);
+    public void makeAITurn(NewCharacter[] targets, Message msg)
+    {
+        NewCharacter target = chooseRandomTarget(targets);
         this.attack(target, msg);
     }
 }

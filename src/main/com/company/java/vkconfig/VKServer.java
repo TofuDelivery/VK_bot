@@ -21,7 +21,7 @@ public class VKServer {
 
     public static void main(String[] args) throws NullPointerException, ApiException, InterruptedException, ClientException {
         System.out.println(("Running server..."));
-        var defaultChar = new Character("default", 0, 0, 0, 0, 0, 0, 0, 0);
+        var defaultChar = new Character("default", 0, 0, 0, 0, 0, 0, 0, 0, 0);
         var games = new HashMap<Integer, Game>();
         while (true){
             //Thread.sleep(100);

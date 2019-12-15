@@ -11,7 +11,7 @@
       <root url="jar://$PROJECT_DIR$/lib/netty-codec-4.0.48.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-handler-4.0.48.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-transport-4.0.48.Final.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/netty-transport-native-epoll-4.0.48.Final-linux-x86_64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/netty-transport-native-epoll-4.0.48.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-common-4.0.48.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-resolver-dns-2.0.33.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-resolver-2.0.33.jar!/" />

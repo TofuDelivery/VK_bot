@@ -2,7 +2,11 @@ package main.com.company.java.Core;
 
 import com.vk.api.sdk.objects.messages.Message;
 import main.com.company.java.Character;
+import main.com.company.java.Combat;
 import main.com.company.java.vkconfig.VKManager;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class ChooseTarget extends Command
 {
@@ -11,17 +15,17 @@ public class ChooseTarget extends Command
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
         if (message.getBody().equals("Убегать")) {
-            new Exit().exec(game, message);
-        } else {
-            var i = 1;
-            new VKManager().sendMessage("Выберите цель", message.getUserId());
+            new VKManager().sendMessage("Вы успешно спаслись!", message.getUserId());
+            new VKManager().sendKeyboardWithTwoButtons("Хотите продолжать приключение?", "Да", "Нет", message.getUserId());
+            game.setState(5);
+        }else{
+            var currentEnemies = new ArrayList<String>();
             for (var enemy : game.enemies.enemies) {
-                if(enemy.isAlive())
-                {
-                    new VKManager().sendMessage(i + ")  " + enemy.name + "  [" + enemy.currentHealth + "\\" + enemy.maximumHealth + "]", message.getUserId());
+                if(enemy.isAlive()){
+                    currentEnemies.add(enemy.name + " " + enemy.currentHealth + " % " + enemy.maximumHealth);
                 }
-                i++;
             }
+            new VKManager().sendKeyBoard("Выберите цель", message.getUserId(), currentEnemies);
             game.setState(4);
         }
     }

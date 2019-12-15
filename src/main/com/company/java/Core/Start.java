@@ -4,6 +4,10 @@ import com.vk.api.sdk.objects.messages.Message;
 import main.com.company.java.vkconfig.VKManager;
 import main.com.company.java.vkconfig.VKServer;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Start extends Command {
 
     @Override
@@ -13,7 +17,11 @@ public class Start extends Command {
         {
             new VKManager().sendMessage("Игра началась!", message.getUserId());
             new VKManager().sendSticker(message.getUserId());
-            new VKManager().sendKeyBoardWithThreeButtons("Выберите класс","Мечник", "Ассассин", "Заклинатель", message.getUserId());
+            ArrayList<String> buttonTexts = new ArrayList<>();
+            buttonTexts.add("Мечник");
+            buttonTexts.add("Ассассин");
+            buttonTexts.add("Заклинатель");
+            new VKManager().sendKeyBoard("Выберите класс",message.getUserId(), buttonTexts);
             game.setState(1);
         }
         else
