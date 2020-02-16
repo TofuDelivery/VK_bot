@@ -5,7 +5,7 @@ import main.com.company.java.Potion;
 
 public class SmallHealthPotion extends Potion
 {
-    public String name;
+    private String name;
     int value;
 
     public SmallHealthPotion()
@@ -14,6 +14,9 @@ public class SmallHealthPotion extends Potion
         this.value = 50;
     }
 
+    public String getName(){
+        return this.name;
+    }
     @Override
     public void consume(Character target)
     {

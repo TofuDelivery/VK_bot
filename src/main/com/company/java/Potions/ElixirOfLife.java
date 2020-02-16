@@ -5,8 +5,13 @@ import main.com.company.java.Potion;
 
 public class ElixirOfLife extends Potion
 {
-    String name = "Эликсир жизни";
+    private String name = "Эликсир жизни";
     int value = 1000;
+
+    public String getName(){
+        return this.name;
+    }
+
     @Override
     public void consume(Character target)
     {
