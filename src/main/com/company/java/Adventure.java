@@ -4,8 +4,6 @@ package main.com.company.java;
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.messages.Message;
-import main.com.company.java.Core.Commands;
-import main.com.company.java.vkconfig.VKCore;
 
 public class Adventure
 {

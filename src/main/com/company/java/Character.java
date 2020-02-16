@@ -77,37 +77,39 @@ public class Character
         this.currentHealth = this.maximumHealth;
     }
 
-    public void attack(Character target, Message msg) throws InterruptedException {
-        new VKManager().sendMessage(this.name + " атакует!", msg.getUserId());
+    public void attack(Character target, Message message) throws InterruptedException {
+        new VKManager().sendMessage(this.name + " атакует!", message.getUserId());
         var random = new Random();
+        var currentMessage = "";
         var currentDamage = random.nextInt(this.maximalDamage - this.minimalDamage + 1) + minimalDamage;
         var currentCritChance = random.nextInt(100) + 1;
         if (currentCritChance <= this.criticalChance)
         {
             currentDamage *= 2;
-            new VKManager().sendMessage("Критический удар!", msg.getUserId());
+            currentMessage += "Критический удар!\n";
         }
         var currentEvasionChance = random.nextInt(100) + 1;
-        if (currentEvasionChance <= target.evasionChance)
+        if (currentEvasionChance <= target.evasionChance && currentCritChance > this.criticalChance)
         {
-            new VKManager().sendMessage(target.name + " уклоняется!", msg.getUserId() );
+            currentMessage += target.name + " уклоняется!\n";
             return;
         }
         else
         {
             currentDamage = currentDamage * (100 - target.damageReduction) / 100;
             target.currentHealth -= currentDamage;
-            new VKManager().sendMessage(target.name + " получает " + currentDamage + " урона!", msg.getUserId());
+            currentMessage += target.name + " получает " + currentDamage + " урона!\n";
         }
         if (target.isDead())
         {
-            this.getExperience(target, msg);
-            new VKManager().sendMessage(target.name + " больше не двигается!", msg.getUserId());
+            this.getExperience(target, message);
+            currentMessage += target.name + " больше не двигается!\n";
         }
         else
         {
-            new VKManager().sendMessage("У " + target.name + " осталось " + target.currentHealth + " очков здоровья!", msg.getUserId());
+            currentMessage += "У " + target.name + " осталось " + target.currentHealth + " очков здоровья!\n";
         }
+        new VKManager().sendMessage(currentMessage, message.getUserId());
     }
 
     public void changeCharacter(Character anotherCharacter)

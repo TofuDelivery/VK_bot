@@ -1,6 +1,8 @@
-package main.com.company.java.Core;
+package main.com.company.java.Commands.State3;
 
 import com.vk.api.sdk.objects.messages.Message;
+import main.com.company.java.Commands.Command;
+import main.com.company.java.Commands.Game;
 import main.com.company.java.vkconfig.VKManager;
 
 import java.util.ArrayList;
@@ -12,7 +14,7 @@ public class SelectPotion extends Command
     {
         if(game.player.potions.count == 0){
             new VKManager().sendMessage("У вас нет никаких зелий", message.getUserId());
-            game.setState(3);
+            game.setState(3, 0);
         }
         else {
         var msg = "Выберите зелье";
@@ -20,7 +22,7 @@ public class SelectPotion extends Command
         for(var i = 0; i < game.player.potions.count; i++)
             buttonTexts.add(game.player.potions.potions[i].getName());
         new VKManager().sendKeyBoard(msg, message.getUserId(), buttonTexts);
-        game.setState(9);
+        game.setState(3, 3);
         }
     }
 }

@@ -1,7 +1,9 @@
-package main.com.company.java.Core;
+package main.com.company.java.Commands.State1;
 
 import com.vk.api.sdk.objects.messages.Message;
 import main.com.company.java.Classes;
+import main.com.company.java.Commands.Command;
+import main.com.company.java.Commands.Game;
 import main.com.company.java.Potions.MediumHealthPotion;
 import main.com.company.java.Potions.SmallHealthPotion;
 import main.com.company.java.vkconfig.VKManager;
@@ -26,7 +28,7 @@ public class ChooseClass extends Command
             game.player.potions.addPotion(new SmallHealthPotion());
             game.player.potions.addPotion(new SmallHealthPotion());
             game.player.potions.addPotion(new MediumHealthPotion());
-            game.setState(2);
+            game.setState(2, 0);
         }
     }
 }

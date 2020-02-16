@@ -3,8 +3,8 @@ package main.com.company.java.vkconfig;
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.messages.Message;
-import main.com.company.java.Core.Commands;
-import main.com.company.java.Core.Game;
+import main.com.company.java.Commands.Commands;
+import main.com.company.java.Commands.Game;
 import main.com.company.java.Character;
 
 import java.util.HashMap;
@@ -23,8 +23,8 @@ public class VKServer {
         System.out.println(("Running server..."));
         var defaultChar = new Character("default", 0, 0, 0, 0, 0, 0, 0, 0, 0);
         var games = new HashMap<Integer, Game>();
-        while (true){
-            //Thread.sleep(100);
+        while (true)
+        {
             try{
                 Message message = vkCore.getMessage();
                 if(message != null)

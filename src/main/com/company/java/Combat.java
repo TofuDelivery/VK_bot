@@ -1,7 +1,7 @@
 package main.com.company.java;
 
 import com.vk.api.sdk.objects.messages.Message;
-import main.com.company.java.Core.Game;
+import main.com.company.java.Commands.Game;
 import main.com.company.java.vkconfig.VKManager;
 
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class Combat
         var buttonTexts = new ArrayList<String>();
         buttonTexts.add("Атаковать");
         buttonTexts.add("Убегать");
-        buttonTexts.add("Выпить зелье");
+        buttonTexts.add("Пить зелье");
         new VKManager().sendKeyBoard("Что будете делать?", msg.getUserId(), buttonTexts);
 
         Thread.sleep(1000);

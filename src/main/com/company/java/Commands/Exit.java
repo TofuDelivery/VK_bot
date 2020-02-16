@@ -1,8 +1,7 @@
-package main.com.company.java.Core;
+package main.com.company.java.Commands;
 
 import com.vk.api.sdk.objects.messages.Message;
 import main.com.company.java.vkconfig.VKManager;
-import main.com.company.java.vkconfig.VKServer;
 
 public class Exit extends Command
 {
@@ -10,6 +9,6 @@ public class Exit extends Command
     public void exec(Game game, Message message)
     {
         new VKManager().sendMessage("Game over!", message.getUserId());
-        game.setState(0);
+        game.setState(0, 0);
     }
 }

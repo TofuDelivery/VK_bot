@@ -1,9 +1,6 @@
-package main.com.company.java.Core;
+package main.com.company.java.Commands;
 
-import com.vk.api.sdk.exceptions.ApiException;
-import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.messages.Message;
-import main.com.company.java.vkconfig.VKServer;
 
 public  abstract class Command {
 
