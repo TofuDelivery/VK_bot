@@ -6,8 +6,7 @@ import main.com.company.java.Commands.Command;
 import main.com.company.java.Commands.Exit;
 import main.com.company.java.Commands.Game;
 
-public class ContinueAdventure extends Command {
-    @Override
+public class ContinueAdventure implements Command {
     public void exec(Game game, Message message) throws InterruptedException {
         if(message.getBody().equals("Да"))
         {

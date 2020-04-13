@@ -7,10 +7,8 @@ import main.com.company.java.vkconfig.VKManager;
 
 import java.util.ArrayList;
 
-public class ChooseTarget extends Command
+public class ChooseTarget implements Command
 {
-
-    @Override
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
         var currentEnemies = new ArrayList<String>();

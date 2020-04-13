@@ -7,9 +7,8 @@ import main.com.company.java.vkconfig.VKManager;
 
 import java.util.ArrayList;
 
-public class SelectPotion extends Command
+public class SelectPotion implements Command
 {
-    @Override
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
         if(game.player.potions.count == 0){

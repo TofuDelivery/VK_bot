@@ -7,9 +7,8 @@ import main.com.company.java.vkconfig.VKManager;
 
 import java.util.ArrayList;
 
-public class Start extends Command {
+public class Start implements Command {
 
-    @Override
     public void exec(Game game, Message message)
     {
         if(message.getBody().equals("start"))

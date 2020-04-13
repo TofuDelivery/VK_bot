@@ -7,8 +7,7 @@ import main.com.company.java.Commands.Command;
 import main.com.company.java.Commands.Game;
 import main.com.company.java.vkconfig.VKManager;
 
-public class Attack extends Command {
-    @Override
+public class Attack implements Command {
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
         var choice = Integer.parseInt(message.getBody().split(" ")[1].split(" % ")[0]);

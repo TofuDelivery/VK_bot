@@ -6,9 +6,8 @@ import main.com.company.java.Commands.Command;
 import main.com.company.java.Commands.Game;
 import main.com.company.java.vkconfig.VKManager;
 
-public class StartAdventure extends Command
+public class StartAdventure implements Command
 {
-    @Override
     public void exec(Game game, Message msg) throws InterruptedException {
         if(msg.getBody().equals("Да"))
         {

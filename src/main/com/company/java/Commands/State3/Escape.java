@@ -8,8 +8,7 @@ import main.com.company.java.vkconfig.VKManager;
 
 import java.util.Random;
 
-public class Escape extends Command {
-    @Override
+public class Escape implements Command {
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
         var chance = new Random().nextInt(100) + 1;

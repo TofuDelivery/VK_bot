@@ -3,7 +3,7 @@ package main.com.company.java.Potions;
 import main.com.company.java.Character;
 import main.com.company.java.Potion;
 
-public class SmallHealthPotion extends Potion
+public class SmallHealthPotion implements Potion
 {
     private String name;
     int value;

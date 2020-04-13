@@ -8,10 +8,9 @@ import main.com.company.java.Potions.MediumHealthPotion;
 import main.com.company.java.Potions.SmallHealthPotion;
 import main.com.company.java.vkconfig.VKManager;
 
-public class ChooseClass extends Command
+public class ChooseClass implements Command
 {
 
-    @Override
     public void exec(Game game, Message message) throws NullPointerException
     {
         var choice = message.getBody();

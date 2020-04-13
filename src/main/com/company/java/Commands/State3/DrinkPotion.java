@@ -6,7 +6,7 @@ import main.com.company.java.Commands.Game;
 import main.com.company.java.Potion;
 import main.com.company.java.vkconfig.VKManager;
 
-public class DrinkPotion extends Command
+public class DrinkPotion implements Command
 {
 
     private int getChoice(String msg, Potion[] potions)
@@ -21,7 +21,6 @@ public class DrinkPotion extends Command
         return -1;
     }
 
-    @Override
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
             var player = game.player;

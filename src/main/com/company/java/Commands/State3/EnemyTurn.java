@@ -9,8 +9,7 @@ import main.com.company.java.vkconfig.VKManager;
 
 import java.util.ArrayList;
 
-public class EnemyTurn extends Command {
-    @Override
+public class EnemyTurn implements Command {
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
         var player = game.player;

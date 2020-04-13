@@ -3,7 +3,7 @@ package main.com.company.java.Potions;
 import main.com.company.java.Character;
 import main.com.company.java.Potion;
 
-public class ElixirOfLife extends Potion
+public class ElixirOfLife implements Potion
 {
     private String name = "Эликсир жизни";
     int value = 1000;
