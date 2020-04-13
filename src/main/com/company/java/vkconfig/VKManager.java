@@ -1,12 +1,14 @@
 package main.com.company.java.vkconfig;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.users.UserXtrCounters;
 import com.vk.api.sdk.queries.messages.MessagesSendQuery;
 
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObjectBuilder;
 import java.util.ArrayList;
 
 public class VKManager {
@@ -42,23 +44,23 @@ public class VKManager {
     }
 
     public void sendKeyBoard(String msg, int peerId, ArrayList<String> buttonTexts){
-        StringBuilder keyboard = new StringBuilder("{\n" +
-                "  \"one_time\": true,\n" +
-                "  \"buttons\": [\n" +
-                "    [\n");
-        var i = 1;
-        for (String text : buttonTexts){
-            keyboard.append("      {\n" + "        \"action\": {\n" + "          \"type\": \"text\",\n" + "          \"payload\": \"{\\\"button\\\": \\\"").append(i).append("\\\"}\",\n").append("          \"label\": \"").append(text).append("\"\n").append("        },\n").append("        \"color\": \"primary\"\n");
-            if (i == buttonTexts.size())
-                    keyboard.append("      }\n");
-            else keyboard.append("      },\n");
-            i++;
+        JsonObjectBuilder builder = Json.createObjectBuilder();
+        JsonArrayBuilder buttons = Json.createArrayBuilder();
+        for (var i = 0 ; i < buttonTexts.size(); i++ ){
+            buttons.add(Json.createArrayBuilder()
+                    .add(Json.createObjectBuilder()
+                            .add("action", Json.createObjectBuilder()
+                                    .add("type", "text")
+                                    .add("payload", "{\"build\": \"" + (i + 1) + "\"}")
+                                    .add("label", buttonTexts.get(i)))));
+
         }
-
-
-         keyboard.append("    ]\n" + "  ]\n" + "} ");
+        builder.add("one_time", false).
+                add("buttons", Json.createArrayBuilder()
+                        .addAll(buttons));
+        var keyboard = builder.build();
         try {
-            vkCore.getVk().messages().send(vkCore.getActor()).peerId(peerId).message(msg).unsafeParam("keyboard", keyboard.toString()).execute();
+            vkCore.getVk().messages().send(vkCore.getActor()).peerId(peerId).message(msg).unsafeParam("keyboard", keyboard).execute();
 
         } catch (ApiException | ClientException e) {
             e.printStackTrace();
