@@ -7,6 +7,8 @@ import main.com.company.java.Commands.Command;
 import main.com.company.java.Commands.Game;
 import main.com.company.java.vkconfig.VKManager;
 
+import java.util.ArrayList;
+
 public class Attack implements Command {
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
@@ -24,8 +26,8 @@ public class Attack implements Command {
         if (Combat.isPartyDead(enemies)) {
             new VKManager().sendMessage("Вы победили! Ваше текущее здоровье: " + player.currentHealth, message.getUserId());
             Combat.restoreParty(enemies);
-            new VKManager().sendKeyboardWithTwoButtons("Хотите продолжать приключение?", "Да", "Нет", message.getUserId());
-            game.setState(3, 4);
+            new VKManager().sendKeyBoard("Куда хотите отправиться?", message.getUserId(), new ArrayList<>(){{ add("Деревня"); add("Приключение");}});
+            game.setState(5, 0);
         }
         else
             new EnemyTurn().exec(game, message);

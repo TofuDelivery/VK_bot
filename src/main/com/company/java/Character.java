@@ -1,10 +1,7 @@
 
 package main.com.company.java;
 
-import com.vk.api.sdk.exceptions.ApiException;
-import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.messages.Message;
-import main.com.company.java.vkconfig.VKCore;
 import main.com.company.java.vkconfig.VKManager;
 
 import java.util.Random;
@@ -136,4 +133,5 @@ public class Character
         Character target = chooseRandomTarget(targets);
         this.attack(target, msg);
     }
+
 }

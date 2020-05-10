@@ -8,6 +8,8 @@ import main.com.company.java.Potions.MediumHealthPotion;
 import main.com.company.java.Potions.SmallHealthPotion;
 import main.com.company.java.vkconfig.VKManager;
 
+import java.util.ArrayList;
+
 public class ChooseClass implements Command
 {
 
@@ -22,12 +24,12 @@ public class ChooseClass implements Command
         else
         {
             new VKManager().sendMessage("Выбор сделан!", message.getUserId());
-            new VKManager().sendKeyboardWithTwoButtons("Готовы начать ваше приключение?","Да", "Нет", message.getUserId());
+            new VKManager().sendKeyBoard("Куда хотите отправиться?", message.getUserId(), new ArrayList<>(){{ add("Деревня"); add("Приключение");}});
             game.player.changeCharacter(Classes.characters.get(choice));
             game.player.potions.addPotion(new SmallHealthPotion());
             game.player.potions.addPotion(new SmallHealthPotion());
             game.player.potions.addPotion(new MediumHealthPotion());
-            game.setState(2, 0);
+            game.setState(5, 0);
         }
     }
 }

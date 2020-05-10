@@ -6,6 +6,7 @@ import com.vk.api.sdk.objects.messages.Message;
 import main.com.company.java.Commands.Commands;
 import main.com.company.java.Commands.Game;
 import main.com.company.java.Character;
+import main.com.company.java.Trader;
 
 import java.util.HashMap;
 
@@ -30,7 +31,7 @@ public class VKServer {
                 if(message != null)
                 {
                     if(!games.containsKey(message.getUserId()))
-                        games.put(message.getUserId(), new Game(defaultChar, null));
+                        games.put(message.getUserId(), new Game(defaultChar, null, new Trader()));
                     Commands.pool.get(games.get(message.getUserId()).state).exec(games.get(message.getUserId()), message);
                 }
             }catch(ClientException e){
