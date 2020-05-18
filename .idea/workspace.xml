@@ -1,7 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f94bd49-4271-4c10-bc96-898ae23d1400" name="Default Changelist" comment="" />
+    <list default="true" id="8f94bd49-4271-4c10-bc96-898ae23d1400" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/async-http-client-2.0.33.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/async-http-client-netty-utils-2.0.33.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-codec-1.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-collections4-4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-io-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/feign-core-8.14.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/feign-slf4j-8.14.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/gson-2.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/httpclient-4.5.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/httpcore-4.4.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/httpmime-4.5.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-4.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-buffer-4.0.48.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-codec-4.0.48.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-codec-dns-2.0.33.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-codec-http-4.0.48.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-common-4.0.48.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-handler-4.0.48.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-reactive-streams-1.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-resolver-2.0.33.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-resolver-dns-2.0.33.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-transport-4.0.48.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/netty-transport-native-epoll-4.0.48.Final-linux-x86_64.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/reactive-streams-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/sdk-0.5.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-1.7.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_netflix_feign_feign_slf4j_8_14_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_sun_maven_maven_junit_plugin_1_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_vk_api_sdk_0_5_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/META-INF/untitled1.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/main/.idea/main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/main/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/main/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/main/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/main/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/main/com/company/.idea/company.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/main/com/company/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/main/com/company/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/main/com/company/java/vkconfig/keyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/.idea/main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/.idea/company.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Adventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Bonus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Classes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Classes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Combat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/CreateChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/CreateChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State0/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State0/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State1/ChooseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State1/ChooseClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State2/StartAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State2/StartAdventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State3/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State3/Attack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State3/ChooseAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State3/ChooseAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State3/ChooseTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State3/ChooseTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State3/ContinueAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State3/ContinueAdventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State3/DrinkPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State3/DrinkPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State3/EnemyTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State3/EnemyTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State3/Escape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State3/Escape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State3/SelectPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State3/SelectPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State4/BuyPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State4/BuyPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State4/VisitTrader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State4/VisitTrader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Commands/State5/VisitVillage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/commands/State5/VisitVillage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Enemies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Enemies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/EnemiesParty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/EnemiesParty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/EnemiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/EnemiesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/IntegerPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/IntegerPair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/ItemType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Potion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/PotionInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/PotionInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Potions/BigHealthPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/potions/BigHealthPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Potions/ElixirOfLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/potions/ElixirOfLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Potions/MediumHealthPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/potions/MediumHealthPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Potions/SmallHealthPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/potions/SmallHealthPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/PotionsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/PotionsList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/Trader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Trader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/vkconfig/VKCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/vkconfig/VKCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/vkconfig/VKManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/vkconfig/VKManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/company/java/vkconfig/VKServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/vkconfig/VKServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1.iml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +122,25 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -29,12 +155,6 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="301" />
-    <option name="y" value="-29" />
-    <option name="width" value="978" />
-    <option name="height" value="1089" />
-  </component>
   <component name="ProjectId" id="1V1Nb8fkkFt2m6XqwKOQ2oLDf9v" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,12 +168,31 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LucasVersion" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/company/vkconfig" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lukas\IdeaProjects\VK_bot\src\main\java\com\company\vkconfig" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.VKServer (1)">
+    <configuration name="VKServer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.vkconfig.VKServer" />
+      <module name="VK_bot.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.vkconfig.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VKServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.com.company.java.vkconfig.VKServer" />
       <module name="untitled1" />
@@ -67,8 +206,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VK_bot [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.VK_bot [build]" />
+        <item itemvalue="Application.VKServer (1)" />
         <item itemvalue="Application.VKServer" />
       </list>
     </recent_temporary>
@@ -112,6 +272,11 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/untitled1" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="654" y="295" key="#Notifications" timestamp="1589114088097">
       <screen x="0" y="0" width="1536" height="864" />
@@ -129,25 +294,53 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1589117241074" />
-    <state width="1492" height="278" key="GridCell.Tab.0.bottom" timestamp="1589119867621">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1589806574764">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1589806574764" />
+    <state width="1493" height="265" key="GridCell.Tab.0.bottom" timestamp="1589806515261">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="265" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589806515261" />
     <state width="1492" height="278" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1589119867621" />
-    <state width="1492" height="278" key="GridCell.Tab.0.center" timestamp="1589119867621">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1493" height="265" key="GridCell.Tab.0.center" timestamp="1589806515260">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1493" height="265" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1589806515260" />
     <state width="1492" height="278" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1589119867621" />
-    <state width="1492" height="278" key="GridCell.Tab.0.left" timestamp="1589119867620">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1493" height="265" key="GridCell.Tab.0.left" timestamp="1589806515259">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1493" height="265" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1589806515259" />
     <state width="1492" height="278" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1589119867620" />
-    <state width="1492" height="278" key="GridCell.Tab.0.right" timestamp="1589119867621">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1493" height="265" key="GridCell.Tab.0.right" timestamp="1589806515261">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state width="1493" height="265" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1589806515261" />
     <state width="1492" height="278" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1589119867621" />
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1589806515262">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589806515262" />
+    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1589806515261">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1589806515261" />
+    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1589806515261">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1589806515261" />
+    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1589806515262">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1589806515262" />
     <state x="249" y="6" key="SettingsEditor" timestamp="1589114645121">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="249" y="6" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1589114645121" />
+    <state x="478" y="0" width="579" height="834" key="find.popup" timestamp="1589806514835">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="478" y="0" width="579" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1589806514835" />
   </component>
 </project>

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/untitled1.iml" filepath="$PROJECT_DIR$/untitled1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VK_bot.iml" filepath="$PROJECT_DIR$/.idea/modules/VK_bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VK_bot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/VK_bot.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VK_bot.test.iml" filepath="$PROJECT_DIR$/.idea/modules/VK_bot.test.iml" />
     </modules>
   </component>
 </project>
