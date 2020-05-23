@@ -3,10 +3,7 @@ package com.company.commands;
 import com.company.commands.State0.Start;
 import com.company.commands.State1.ChooseClass;
 import com.company.commands.State2.StartAdventure;
-import com.company.commands.State3.Attack;
-import com.company.commands.State3.ChooseAction;
-import com.company.commands.State3.ContinueAdventure;
-import com.company.commands.State3.DrinkPotion;
+import com.company.commands.State3.*;
 import com.company.commands.State4.BuyPotion;
 import com.company.commands.State4.VisitTrader;
 import com.company.commands.State5.VisitVillage;
@@ -25,6 +22,8 @@ public class Commands
         {put(new IntegerPair(3, 2), new VisitTrader());}
         {put(new IntegerPair(3, 3), new DrinkPotion());}
         {put(new IntegerPair(3, 4), new ContinueAdventure());}
+        {put(new IntegerPair(3, 5), new ChooseTargetForAbility());}
+        {put(new IntegerPair(3, 6), new CastAbility());}
         {put(new IntegerPair(4, 0), new BuyPotion());}
         {put(new IntegerPair(5, 0), new VisitVillage());}
 

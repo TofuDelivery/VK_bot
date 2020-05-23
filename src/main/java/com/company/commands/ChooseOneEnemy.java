@@ -1,14 +1,12 @@
-package com.company.commands.State3;
+package com.company.commands;
 
-import com.vk.api.sdk.objects.messages.Message;
-import com.company.commands.Command;
-import com.company.commands.Game;
 import com.company.vkconfig.VKManager;
+import com.vk.api.sdk.objects.messages.Message;
 
 import java.util.ArrayList;
 
-public class ChooseTarget implements Command
-{
+public class ChooseOneEnemy implements Command{
+    @Override
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
         var currentEnemies = new ArrayList<String>();
@@ -18,7 +16,5 @@ public class ChooseTarget implements Command
             }
         }
         new VKManager().sendKeyBoard("Выберите цель", message.getPeerId(), currentEnemies);
-        game.setState(3, 1);
     }
 }
-

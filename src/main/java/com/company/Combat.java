@@ -40,6 +40,8 @@ public class Combat
         buttonTexts.add("Атаковать");
         buttonTexts.add("Убегать");
         buttonTexts.add("Пить зелье");
+        buttonTexts.add("Использовать умение");
+        buttonTexts.add("Статус");
         new VKManager().sendKeyBoard("Что будете делать?", msg.getPeerId(), buttonTexts);
 
         Thread.sleep(1000);

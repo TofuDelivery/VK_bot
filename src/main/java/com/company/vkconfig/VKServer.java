@@ -34,7 +34,6 @@ public class VKServer {
                         games.put(message.getPeerId(), new Game(defaultChar, null, new Trader()));
                     Commands.pool.get(games.get(message.getPeerId()).state).exec(games.get(message.getPeerId()), message);
                 }
-                Thread.sleep(333);
             }catch(ClientException e){
                 System.out.println("Возникли проблемы");
                 final int RECONNECT_TIME = 10000;

@@ -23,7 +23,6 @@ public class StartAdventure implements Command
         else
         {
             new VKManager().sendMessage("Когда будете готовы, выберете действие", msg.getPeerId());
-            //new VKManager().sendKeyboardWithTwoButtons("Готовы начать ваше приключение?","Да", "Нет", msg.getPeerId());
             new VKManager().sendKeyBoard("Вы попали на нейтральную территорию.\n Что вы хотите сделать?", msg.getPeerId(), new ArrayList<>(){{add("Отправиться в приключение"); add("Посетить торговца"); add("Закончить игру"); }});
 
         }

@@ -25,8 +25,10 @@ public class EnemyTurn implements Command {
             {
                 ArrayList<String> buttonTexts = new ArrayList<>();
                 buttonTexts.add("Атаковать");
-                buttonTexts.add("Пить зелье");
                 buttonTexts.add("Убегать");
+                buttonTexts.add("Пить зелье");
+                buttonTexts.add("Использовать умение");
+                buttonTexts.add("Статус");
                 new VKManager().sendKeyBoard("Что будете делать?", message.getPeerId(), buttonTexts);
                 game.setState(3, 0);
             }
