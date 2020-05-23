@@ -70,6 +70,29 @@ public class Character
         this.abilitiesList = new AbilitiesList(this);
     }
 
+    public Character(String name, int id, int level, int health, int energy, int maximalDamage, int minimalDamage, int criticalChance, int damageReduction, int evasionChance, int experience, Ability ... abilities)
+    {
+        this.name = name;
+        this.level = level;
+        this.maximumHealth = health;
+        this.currentHealth = this.maximumHealth;
+        this.maximumEnergy = energy;
+        this.currentEnergy = this.maximumEnergy;
+        this.maximalDamage = maximalDamage;
+        this.minimalDamage = minimalDamage;
+        this.criticalChance = criticalChance;
+        this.damageReduction = damageReduction;
+        this.evasionChance = evasionChance;
+        this.experience = experience;
+        this.id = id;
+        this.potions = new PotionInventory(this);
+        this.abilitiesList = new AbilitiesList(this);
+        for(var ability : abilities)
+        {
+            this.abilitiesList.AddAbility(ability);
+        }
+    }
+
     public boolean isDead()
     {
         return !isAlive();
@@ -163,6 +186,8 @@ public class Character
         this.damageReduction = anotherCharacter.damageReduction;
         this.evasionChance = anotherCharacter.evasionChance;
         this.experience = anotherCharacter.experience;
+        this.potions = anotherCharacter.potions;
+        this.abilitiesList = anotherCharacter.abilitiesList;
     }
 
     private Character chooseRandomTarget(Character[] targets)

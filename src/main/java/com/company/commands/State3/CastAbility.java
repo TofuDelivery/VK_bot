@@ -30,6 +30,8 @@ public class CastAbility implements Command
 
     private Character[] getTargets(Game game, String choice)
     {
+        if(choice.equals("Все враги"))
+            return game.enemies.enemies;
         var name = choice.split(" ")[0];
         var curHealth = Integer.parseInt(choice.split(" ")[1]);
         for(var enemy : game.enemies.enemies)

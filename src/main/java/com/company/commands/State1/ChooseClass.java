@@ -1,7 +1,5 @@
 package com.company.commands.State1;
 
-import com.company.AbilitiesList;
-import com.company.CasterA.Iceshard;
 import com.company.Classes;
 import com.company.commands.Command;
 import com.company.commands.Game;
@@ -31,8 +29,8 @@ public class ChooseClass implements Command
             game.player.potions.addPotion(new SmallHealthPotion());
             game.player.potions.addPotion(new SmallHealthPotion());
             game.player.potions.addPotion(new MediumHealthPotion());
-            game.player.abilitiesList = new AbilitiesList(game.player);
-            game.player.abilitiesList.AddAbility(new Iceshard());
+            //game.player.abilitiesList = new AbilitiesList(game.player);
+            //game.player.abilitiesList.AddAbility(new Iceshard());
             game.setState(5, 0);
         }
     }

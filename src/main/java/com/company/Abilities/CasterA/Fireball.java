@@ -1,4 +1,4 @@
-package com.company.CasterA;
+package com.company.Abilities.CasterA;
 
 import com.company.Ability;
 import com.company.Character;
