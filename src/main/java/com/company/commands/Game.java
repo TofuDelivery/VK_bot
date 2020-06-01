@@ -3,7 +3,7 @@ package com.company.commands;
 import com.company.Character;
 import com.company.EnemiesParty;
 import com.company.IntegerPair;
-import com.company.Trader;
+import com.company.Trader.Trader;
 
 public class Game
 {

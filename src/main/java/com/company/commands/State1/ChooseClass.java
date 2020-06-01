@@ -23,12 +23,18 @@ public class ChooseClass implements Command
         }
         else
         {
+            var player = game.player;
+
             new VKManager().sendMessage("Выбор сделан!", message.getPeerId());
             new VKManager().sendKeyBoard("Куда хотите отправиться?", message.getPeerId(), new ArrayList<>(){{ add("Деревня"); add("Приключение");}});
-            game.player.changeCharacter(Classes.characters.get(choice));
-            game.player.potions.addPotion(new SmallHealthPotion());
-            game.player.potions.addPotion(new SmallHealthPotion());
-            game.player.potions.addPotion(new MediumHealthPotion());
+            player.changeCharacter(Classes.characters.get(choice));
+            var inventory = game.player.inventory;
+
+            inventory.addPotion(new SmallHealthPotion());
+            inventory.addPotion(new SmallHealthPotion());
+            inventory.addPotion(new MediumHealthPotion());
+            inventory.addCoins(1, 10, 100);
+
             //game.player.abilitiesList = new AbilitiesList(game.player);
             //game.player.abilitiesList.AddAbility(new Iceshard());
             game.setState(5, 0);

@@ -23,14 +23,16 @@ public class DrinkPotion implements Command
 
     public void exec(Game game, Message message) throws NullPointerException, InterruptedException
     {
-            var player = game.player;
-            var currentHealth = player.currentHealth;
-            var choice = getChoice(message.getText(), game.player.potions.potions);
-            var currentPotion = game.player.potions.potions[choice].getName();
-            game.player.potions.consume(choice);
-            var healedHealth = player.currentHealth - currentHealth;
-            new VKManager().sendMessage("Вы использовали " + currentPotion + " и восстановили " + healedHealth + "очков здоровья!", message.getPeerId());
+        var player = game.player;
+        var currentHealth = player.currentHealth;
+        var potions = game.player.inventory.getPotions();
+        var choice = getChoice(message.getText(), potions.potions);
 
-            new EnemyTurn().exec(game, message);
+        var currentPotion = potions.potions[choice].getName();
+        potions.consume(choice);
+        var healedHealth = player.currentHealth - currentHealth;
+        new VKManager().sendMessage("Вы использовали " + currentPotion + " и восстановили " + healedHealth + "очков здоровья!", message.getPeerId());
+
+        new EnemyTurn().exec(game, message);
     }
 }

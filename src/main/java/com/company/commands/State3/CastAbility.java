@@ -7,6 +7,8 @@ import com.company.commands.Game;
 import com.company.vkconfig.VKManager;
 import com.vk.api.sdk.objects.messages.Message;
 
+import java.util.ArrayList;
+
 
 public class CastAbility implements Command
 {
@@ -21,8 +23,8 @@ public class CastAbility implements Command
         if (Combat.isPartyDead(enemies)) {
             new VKManager().sendMessage("Вы победили! Ваше текущее здоровье: " + game.player.currentHealth, message.getPeerId());
             Combat.restoreParty(enemies);
-            new VKManager().sendKeyboardWithTwoButtons("Хотите продолжать приключение?", "Да", "Нет", message.getPeerId());
-            game.setState(3, 4);
+            new VKManager().sendKeyBoard("Куда хотите отправиться?", message.getPeerId(), new ArrayList<>(){{ add("Деревня"); add("Приключение");}});
+            game.setState(5, 0);
         }
         else
             new EnemyTurn().exec(game, message);

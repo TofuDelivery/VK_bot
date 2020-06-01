@@ -1,4 +1,7 @@
-package com.company;
+package com.company.Inventory;
+
+import com.company.Character;
+import com.company.Potion;
 
 public class PotionInventory
 {
@@ -54,6 +57,25 @@ public class PotionInventory
     public boolean isInventoryFull()
     {
         return !isInventoryNotFull();
+    }
+    public boolean isEmpty(){
+        return count == 0;
+    }
+    public boolean isNotEmpty(){
+        return !isEmpty();
+    }
+
+
+    public String getStringPotions(){
+        if (isNotEmpty()){
+            StringBuilder builder = new StringBuilder();
+            builder.append("Ваши зелья:\n");
+            for(var i = 0; i < count; i++){
+                builder.append(potions[i].getName() + "\n");
+            }
+            return builder.toString();
+        }
+        return "Зелий нет";
     }
 
 }

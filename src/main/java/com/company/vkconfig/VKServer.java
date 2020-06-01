@@ -6,7 +6,7 @@ import com.vk.api.sdk.objects.messages.Message;
 import com.company.commands.Commands;
 import com.company.commands.Game;
 import com.company.Character;
-import com.company.Trader;
+import com.company.Trader.Trader;
 
 import java.util.HashMap;
 

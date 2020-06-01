@@ -1,6 +1,8 @@
-
 package com.company;
 
+import com.company.Inventory.CoinsPouch;
+import com.company.Inventory.Inventory;
+import com.company.Inventory.PotionInventory;
 import com.company.vkconfig.VKManager;
 import com.vk.api.sdk.objects.messages.Message;
 
@@ -21,7 +23,8 @@ public class Character
     public int evasionChance;
     public int experience;
     int id;
-    public PotionInventory potions;
+    //public PotionInventory potions;
+    public Inventory inventory;
     public AbilitiesList abilitiesList;
     public Character currentTarget;
     public Ability currentAbility;
@@ -30,7 +33,7 @@ public class Character
     public Character()
     {
         this.name = "default";
-        this.potions = new PotionInventory(this);
+        this.inventory = new Inventory(new CoinsPouch(0, 0, 0), new PotionInventory(this));
     }
 
     public Character(String name, int id, int level, int health, int maximalDamage, int minimalDamage, int criticalChance, int damageReduction, int evasionChance, int experience)
@@ -47,7 +50,7 @@ public class Character
         this.evasionChance = evasionChance;
         this.experience = experience;
         this.id = id;
-        this.potions = new PotionInventory(this);
+        this.inventory = new Inventory(new CoinsPouch(0, 0, 0), new PotionInventory(this));
         this.abilitiesList = new AbilitiesList(this);
     }
 
@@ -66,7 +69,7 @@ public class Character
         this.evasionChance = evasionChance;
         this.experience = experience;
         this.id = id;
-        this.potions = new PotionInventory(this);
+        this.inventory = new Inventory(new CoinsPouch(0, 0, 0), new PotionInventory(this));
         this.abilitiesList = new AbilitiesList(this);
     }
 
@@ -85,7 +88,7 @@ public class Character
         this.evasionChance = evasionChance;
         this.experience = experience;
         this.id = id;
-        this.potions = new PotionInventory(this);
+        this.inventory = new Inventory(new CoinsPouch(0, 0, 0), new PotionInventory(this));
         this.abilitiesList = new AbilitiesList(this);
         for(var ability : abilities)
         {
@@ -186,7 +189,7 @@ public class Character
         this.damageReduction = anotherCharacter.damageReduction;
         this.evasionChance = anotherCharacter.evasionChance;
         this.experience = anotherCharacter.experience;
-        this.potions = anotherCharacter.potions;
+        this.inventory = anotherCharacter.inventory;
         this.abilitiesList = anotherCharacter.abilitiesList;
     }
 
@@ -201,3 +204,4 @@ public class Character
         this.attack(target, msg);
     }
 }
+

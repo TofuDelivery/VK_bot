@@ -1,9 +1,9 @@
 package com.company.commands.State3;
 
+import com.company.vkconfig.VKManager;
 import com.vk.api.sdk.objects.messages.Message;
 import com.company.Combat;
 import com.company.commands.Command;
-import com.company.commands.Exit;
 import com.company.commands.Game;
 
 public class ContinueAdventure implements Command {
@@ -18,7 +18,7 @@ public class ContinueAdventure implements Command {
         }
         else
             {
-                new Exit().exec(game, message);
+                new VKManager().sendMessage("Я вас не понимаю(", message.getPeerId());
             }
     }
 }

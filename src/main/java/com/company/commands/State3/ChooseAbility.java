@@ -22,7 +22,7 @@ public class ChooseAbility implements Command
                 flag = true;
             }
         }
-        if(flag = true)
+        if(flag)
         {
             new VKManager().sendKeyBoard("Выберите умение", message.getPeerId(), abilities);
             game.setState(3, 5);

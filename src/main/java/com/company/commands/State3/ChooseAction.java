@@ -7,7 +7,7 @@ import com.vk.api.sdk.objects.messages.Message;
 
 public class ChooseAction implements Command {
     @Override
-    public void exec(Game game, Message message) throws NullPointerException, InterruptedException
+    public void exec(Game game, Message message) throws InterruptedException
     {
         var action = message.getText().toLowerCase();
         if(action.equals("атаковать"))
@@ -20,6 +20,8 @@ public class ChooseAction implements Command {
             new ChooseAbility().exec(game, message);
         else if(action.equals("статус"))
             new ShowPlayerStatus().exec(game, message);
+        else if(action.equals("инвентарь"))
+            new ShowInventory().exec(game, message);
         else
             new VKManager().sendMessage("Неправильная команда, попробуйте еще раз", message.getPeerId());
     }
