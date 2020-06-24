@@ -96,6 +96,10 @@ public class Character
         }
     }
 
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
+    }
+
     public boolean isDead()
     {
         return !isAlive();

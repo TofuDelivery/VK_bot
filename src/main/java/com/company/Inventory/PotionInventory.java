@@ -16,11 +16,13 @@ public class PotionInventory
         this.count = 0;
     }
 
-    public void consume(int index)
+    public String consume(int index)
     {
+        var potionName = potions[index].getName();
         potions[index].consume(owner);
         remove(index);
         count--;
+        return potionName;
     }
 
     private void remove(int index)
@@ -43,6 +45,14 @@ public class PotionInventory
         }
     }
 
+    public int getPotion (String potionName){
+        for (var i = 0; i<count; i++){
+            var poution = potions[i];
+            if(poution.getName().equals(potionName))
+                return i;
+        }
+        return -1;
+    }
     public void removePotion(int index)
     {
         remove(index);

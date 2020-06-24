@@ -25,13 +25,12 @@ public class DrinkPotion implements Command
     {
         var player = game.player;
         var currentHealth = player.currentHealth;
-        var potions = game.player.inventory.getPotions();
-        var choice = getChoice(message.getText(), potions.potions);
+        var inventory = game.player.inventory;
+        var potionIndex = inventory.getPotion(message.getText());
 
-        var currentPotion = potions.potions[choice].getName();
-        potions.consume(choice);
+        var potionName = inventory.consumePotion(potionIndex);
         var healedHealth = player.currentHealth - currentHealth;
-        new VKManager().sendMessage("Вы использовали " + currentPotion + " и восстановили " + healedHealth + "очков здоровья!", message.getPeerId());
+        new VKManager().sendMessage("Вы использовали " + potionName + " и восстановили " + healedHealth + " очков здоровья!", message.getPeerId());
 
         new EnemyTurn().exec(game, message);
     }

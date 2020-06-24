@@ -19,15 +19,7 @@ public class CastAbility implements Command
         Character[] targets = getTargets(game, choice);
         game.player.currentEnergy -= game.player.currentAbility.ShowCost();
         game.player.currentAbility.cast(targets, message);
-        var enemies = game.enemies.enemies;
-        if (Combat.isPartyDead(enemies)) {
-            new VKManager().sendMessage("Вы победили! Ваше текущее здоровье: " + game.player.currentHealth, message.getPeerId());
-            Combat.restoreParty(enemies);
-            new VKManager().sendKeyBoard("Куда хотите отправиться?", message.getPeerId(), new ArrayList<>(){{ add("Деревня"); add("Приключение");}});
-            game.setState(5, 0);
-        }
-        else
-            new EnemyTurn().exec(game, message);
+        game.setState(3, 0);//нужно написать вывод клавиатуры боя. По-хорошему стоит написать класс со всеми интерфейсами
     }
 
     private Character[] getTargets(Game game, String choice)

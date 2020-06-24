@@ -29,7 +29,16 @@ public class Inventory {
         coins.addCopper(cobber);
     }
 
+    public int getPotion(String potionName){
+        return potions.getPotion(potionName);
+    }
+
+
+    public String consumePotion(int index){
+        var potionName = potions.consume(index);
+        return potionName;
+    }
     public String getStringInventory(){
-        return String.format("Ваш инвентарь:%n%s%n%s", coins.getStringCoins(), potions.getStringPotions());
+        return String.format("%sИНВЕНТАРЬ%s%n%s%n%s","******************","******************", coins.getStringCoins(), potions.getStringPotions());
     }
 }

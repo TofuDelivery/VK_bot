@@ -20,6 +20,6 @@ public class SmallHealthPotion implements Potion
     @Override
     public void consume(Character target)
     {
-        target.currentHealth = Math.min(target.maximumHealth, target.currentHealth + 10);
+       target.setCurrentHealth(Math.min(target.maximumHealth, target.currentHealth + 10));
     }
 }
